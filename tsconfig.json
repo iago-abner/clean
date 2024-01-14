@@ -5,6 +5,7 @@
     "target": "es2019",
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "skipLibCheck": true,
     "sourceMap": true,
     "rootDirs": [
       "src",
@@ -22,7 +23,8 @@
   },
   "include": [
     "src",
-    "tests"
+    "tests",
+    "src/teststs__"
   ],
   "exclude": [
     "node_modules",
