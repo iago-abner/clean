@@ -1,13 +1,6 @@
-import { UserUseCase } from "../../domain/usecases/user";
-
-export type HttpResponse = {
-  statusCode: number;
-  body: any;
-};
-
-export interface Controller<T = any> {
-  handle: (request: T) => Promise<HttpResponse>;
-}
+import { UserUseCase } from "~/domain/usecases/user";
+import { Controller } from "~/presentation/protocols/controller";
+import { HttpResponse } from "~/presentation/protocols/http";
 
 export class UserController implements Controller {
   constructor(private readonly user: UserUseCase) {}

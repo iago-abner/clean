@@ -1,5 +1,5 @@
-import { User } from "../entities/user";
-import { UserRepositoryInMemory } from "../repositories/user-repository";
+import { User } from "~/domain/entities/user";
+import { UserRepositoryInMemory } from "~/domain/repositories/user-repository";
 
 export class UserUseCase {
   constructor(private repository: UserRepositoryInMemory) {}
@@ -12,7 +12,7 @@ export class UserUseCase {
     return this.repository.list();
   }
 
-  public getUserByEmail({ email }: { email: string }) {
+  public async getUserByEmail({ email }: { email: string }) {
     return this.repository.findByEmail(email);
   }
 }

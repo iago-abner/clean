@@ -1,4 +1,4 @@
-import { User } from "../entities/user";
+import { User } from "~/domain/entities/user";
 
 interface UserRepository {
   create: (user: User) => void;
