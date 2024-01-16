@@ -1,21 +1,7 @@
 import { User } from "~/domain/entities/user";
 
-interface UserRepository {
-  create: (user: User) => void;
-  list: () => User[];
-  findByEmail: (email: string) => User | undefined;
-}
-
-export class UserRepositoryInMemory implements UserRepository {
-  constructor(private users: User[]) {}
-
-  create(user: User): void {
-    this.users.push(user);
-  }
-  list(): User[] {
-    return this.users;
-  }
-  findByEmail(email: string): User | undefined {
-    return this.users.find((user) => user.email === email);
-  }
+export interface IUserRepository {
+  create: (user: User) => Promise<User>;
+  list: () => Promise<User[]>;
+  findByEmail: (email: string) => Promise<User | undefined>;
 }

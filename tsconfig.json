@@ -1,7 +1,12 @@
 {
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  },
   "compilerOptions": {
     "outDir": "dist",
-    "module": "commonjs",
+    "moduleResolution": "Node",
     "target": "es2019",
     "esModuleInterop": true,
     "resolveJsonModule": true,
@@ -11,10 +16,10 @@
       "src",
       "tests"
     ],
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
       "~/*": [
-        "*"
+        "src/*"
       ],
       "~/tests/*": [
         "../tests/*"
@@ -22,9 +27,8 @@
     }
   },
   "include": [
-    "src",
-    "tests",
-    "src/teststs__"
+    "src/**/*.ts",
+    "tests/**/*.ts",
   ],
   "exclude": [
     "node_modules",
